@@ -20,8 +20,8 @@ jobs:
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
       - name: Run Lighthouse
-          uses: foo-software/lighthouse-check-action@master
-          with:
-            accessToken: ${{ secrets.GITHUB_TOKEN }}
-            prCommentEnabled: true
-            urls: ${{ steps.vercel.outputs.preview-url }} 
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          accessToken: ${{ secrets.GITHUB_TOKEN }}
+          prCommentEnabled: true
+          urls: ${{ steps.vercel.outputs.preview-url }} 
